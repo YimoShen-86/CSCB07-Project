@@ -97,8 +97,8 @@ public class StudentLoginPg extends AppCompatActivity implements View.OnClickLis
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         if(task.isSuccessful()) {
-                           //enter student page
-                            //startActivity(new Intent(StudentLoginPg.this, ...));
+                            //enter student page
+                            startActivity(new Intent(StudentLoginPg.this, StudentPg.class));
                             progressBar.setVisibility(View.GONE);
                         }else {
                             Toast.makeText(StudentLoginPg.this,"Sorry, unable to login! Please try again", Toast.LENGTH_LONG).show();
