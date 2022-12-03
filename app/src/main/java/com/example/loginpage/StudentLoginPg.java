@@ -26,15 +26,16 @@ public class StudentLoginPg extends AppCompatActivity implements View.OnClickLis
     private EditText editTextEmail, editTextPassword;
     private Button logIn;
 
-    private FirebaseAuth mAuth;
     private ProgressBar progressBar;
+
+    private StudentLoginPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_login_pg);
 
-        mAuth = FirebaseAuth.getInstance();
+        presenter = new StudentLoginPresenter(new FireBaseModel(), this);
 
         register = (TextView) findViewById(R.id.register);
         register.setOnClickListener(this);
@@ -91,20 +92,18 @@ public class StudentLoginPg extends AppCompatActivity implements View.OnClickLis
 
         progressBar.setVisibility(View.VISIBLE);
 
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+        presenter.login(email, password);
+    }
 
-                        if(task.isSuccessful()) {
-                            //enter student page
-                            startActivity(new Intent(StudentLoginPg.this, StudentPg.class));
-                            progressBar.setVisibility(View.GONE);
-                        }else {
-                            Toast.makeText(StudentLoginPg.this,"Sorry, unable to login! Please try again", Toast.LENGTH_LONG).show();
-                            progressBar.setVisibility(View.GONE);
-                        }
-                    }
-                });
+    public void goToStudentPage(String uid){
+        progressBar.setVisibility(View.GONE);
+        Intent intent = new Intent(StudentLoginPg.this, StudentPg.class);
+        intent.putExtra("userID", uid);
+        startActivity(intent);
+    }
+
+    public void displayError(){
+        progressBar.setVisibility(View.GONE);
+        Toast.makeText(StudentLoginPg.this, "Sorry, unable to login! Pl;ease try again", Toast.LENGTH_LONG).show();
     }
 }

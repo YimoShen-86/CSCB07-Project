@@ -90,12 +90,11 @@ public class AdminLoginPg extends AppCompatActivity implements View.OnClickListe
 
                         if(task.isSuccessful()) {
                             //enter admin page
-                            //startActivity(new Intent(AdminLoginPg.this, ...));
-                            progressBar.setVisibility(View.GONE);
+                            startActivity(new Intent(AdminLoginPg.this, AdminPg.class));
                         }else {
                             Toast.makeText(AdminLoginPg.this,"Sorry, unable to login! Please try again", Toast.LENGTH_LONG).show();
-                            progressBar.setVisibility(View.GONE);
                         }
+                        progressBar.setVisibility(View.GONE);
                     }
                 });
     }
