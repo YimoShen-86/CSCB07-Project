@@ -33,8 +33,7 @@ public class StudentPg extends AppCompatActivity implements View.OnClickListener
                 startActivity(new Intent(this, MainActivity.class));
                 break;
             case R.id.courseTaken:
-                //enter course page
-                //startActivity(new Intent(this, ...);
+                startActivity(new Intent(this, Coursestaken.class));
                 break;
             case R.id.generateTimeline:
                 //enter timeline page
