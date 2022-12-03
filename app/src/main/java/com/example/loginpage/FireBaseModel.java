@@ -17,14 +17,16 @@ import java.util.function.Consumer;
 
 public class FireBaseModel {
     private FirebaseAuth mAuth;
-    private DatabaseReference userRef;
+    private DatabaseReference studentRef;
+    private DatabaseReference adminRef;
     private DatabaseReference courseRef;
     private DatabaseReference sessionRef;
 
     public FireBaseModel(){
         mAuth = FirebaseAuth.getInstance();
-        userRef = FirebaseDatabase.getInstance().getReference("Students");
-        userRef = FirebaseDatabase.getInstance().getReference("Courses");
+        adminRef = FirebaseDatabase.getInstance().getReference("Admin");
+        studentRef = FirebaseDatabase.getInstance().getReference("Students");
+        courseRef = FirebaseDatabase.getInstance().getReference("Courses");
         sessionRef = FirebaseDatabase.getInstance().getReference("Session");
     }
 
@@ -75,7 +77,7 @@ public class FireBaseModel {
     }
 
     public void saveCourse(Course course, Consumer<Boolean> callback){
-        userRef.child(course.code).setValue(course).addOnCompleteListener(new OnCompleteListener<Void>() {
+        courseRef.child(course.code).setValue(course).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 callback.accept(task.isSuccessful());
@@ -93,7 +95,7 @@ public class FireBaseModel {
     }
 
     public void getStudent(String uid, Consumer<Student> callback){
-        userRef.child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
+        studentRef.child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Student student = snapshot.getValue(Student.class);
@@ -106,7 +108,7 @@ public class FireBaseModel {
     }
 
     public void saveStudent(String uid, Student student, Consumer<Boolean> callback){
-        userRef.child(uid).setValue(student).addOnCompleteListener(new OnCompleteListener<Void>() {
+        studentRef.child(uid).setValue(student).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 callback.accept(task.isSuccessful());

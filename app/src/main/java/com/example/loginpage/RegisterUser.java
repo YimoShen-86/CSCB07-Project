@@ -21,7 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class RegisterUser extends AppCompatActivity implements View.OnClickListener{
 
     private TextView signUp, register, returnBtn;
-    private EditText editTextFullName, editTextUtorid, editTextEmail, editTextPassword;
+    private EditText editTextFullName, editTextStudentNumber, editTextEmail, editTextPassword;
     private ProgressBar progressBar;
 
     private FirebaseAuth mAuth;
@@ -42,7 +42,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         returnBtn.setOnClickListener(this);
 
         editTextFullName = (EditText) findViewById(R.id.fullName);
-        editTextUtorid = (EditText) findViewById(R.id.utorid);
+        editTextStudentNumber = (EditText) findViewById(R.id.studentNumber);
         editTextEmail = (EditText) findViewById(R.id.email);
         editTextPassword = (EditText) findViewById(R.id.password);
 
@@ -65,7 +65,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         String fullName = editTextFullName.getText().toString().trim();
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
-        String utorid = editTextUtorid.getText().toString().trim();
+        String studentNumber = editTextStudentNumber.getText().toString().trim();
 
         if(fullName.isEmpty()) {
             editTextFullName.setError("Full Name is required");
@@ -73,13 +73,13 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
             return;
         }
 
-        if(utorid.isEmpty()) {
-            editTextUtorid.setError("Utorid is required");
-            editTextUtorid.requestFocus();
+        if(studentNumber.isEmpty()) {
+            editTextStudentNumber.setError("Student Number is required");
+            editTextStudentNumber.requestFocus();
             return;
-        }else if(!Patterns.PHONE.matcher(utorid).matches()) {
-            editTextUtorid.setError("Please enter a valid Utorid!!!");
-            editTextUtorid.requestFocus();
+        }else if(!Patterns.PHONE.matcher(studentNumber).matches()) {
+            editTextStudentNumber.setError("Please enter a valid Student Number!!!");
+            editTextStudentNumber.requestFocus();
             return;
         }
 
@@ -109,7 +109,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()) {
-                    Student student = new Student(fullName, utorid, email);
+                    Student student = new Student(fullName, studentNumber, email);
 
                     Task<Void> voidTask = FirebaseDatabase.getInstance().getReference("Students")
                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())

@@ -24,15 +24,15 @@ public class AdminLoginPg extends AppCompatActivity implements View.OnClickListe
     private EditText editTextEmail, editTextPassword;
     private Button logIn;
 
-    private FirebaseAuth mAuth;
     private ProgressBar progressBar;
+    private AdminLoginPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_login_pg);
 
-        mAuth = FirebaseAuth.getInstance();
+        presenter = new AdminLoginPresenter(new FireBaseModel(), this);
 
         editTextEmail = (EditText) findViewById(R.id.email);
         editTextPassword = (EditText) findViewById(R.id.password);
@@ -82,20 +82,18 @@ public class AdminLoginPg extends AppCompatActivity implements View.OnClickListe
         }
 
         progressBar.setVisibility(View.VISIBLE);
+        presenter.login(email, password);
+    }
 
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+    public void goToAdminPage(String uid){
+        progressBar.setVisibility(View.GONE);
+        Intent intent = new Intent(AdminLoginPg.this, AdminPg.class);
+        intent.putExtra("userID", uid);
+        startActivity(intent);
+    }
 
-                        if(task.isSuccessful()) {
-                            //enter admin page
-                            startActivity(new Intent(AdminLoginPg.this, AdminPg.class));
-                        }else {
-                            Toast.makeText(AdminLoginPg.this,"Sorry, unable to login! Please try again", Toast.LENGTH_LONG).show();
-                        }
-                        progressBar.setVisibility(View.GONE);
-                    }
-                });
+    public void displayError(){
+        progressBar.setVisibility(View.GONE);
+        Toast.makeText(AdminLoginPg.this, "Sorry, unable to login! Please try again", Toast.LENGTH_LONG).show();
     }
 }
