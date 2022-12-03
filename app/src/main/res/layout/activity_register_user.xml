@@ -34,12 +34,12 @@
         app:layout_constraintTop_toBottomOf="@+id/signUp" />
 
     <EditText
-        android:id="@+id/utorid"
+        android:id="@+id/studentNumber"
         android:layout_width="370dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="Utorid"
+        android:hint="Student Number"
         android:inputType="text"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,7 +57,7 @@
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/utorid" />
+        app:layout_constraintTop_toBottomOf="@+id/studentNumber" />
 
     <EditText
         android:id="@+id/password"

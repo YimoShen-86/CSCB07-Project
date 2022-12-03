@@ -27,7 +27,6 @@ public class StudentLoginPg extends AppCompatActivity implements View.OnClickLis
     private Button logIn;
 
     private ProgressBar progressBar;
-
     private StudentLoginPresenter presenter;
 
     @Override
@@ -91,7 +90,6 @@ public class StudentLoginPg extends AppCompatActivity implements View.OnClickLis
         }
 
         progressBar.setVisibility(View.VISIBLE);
-
         presenter.login(email, password);
     }
 
@@ -104,6 +102,6 @@ public class StudentLoginPg extends AppCompatActivity implements View.OnClickLis
 
     public void displayError(){
         progressBar.setVisibility(View.GONE);
-        Toast.makeText(StudentLoginPg.this, "Sorry, unable to login! Pl;ease try again", Toast.LENGTH_LONG).show();
+        Toast.makeText(StudentLoginPg.this, "Sorry, unable to login! Please try again", Toast.LENGTH_LONG).show();
     }
 }
