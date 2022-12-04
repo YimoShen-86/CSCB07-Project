@@ -10,11 +10,13 @@ import android.widget.Button;
 public class StudentPg extends AppCompatActivity implements View.OnClickListener {
 
     private Button btnGenerateTimeline, btnCourseTaken, btnLogOut;
+    String uid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_pg);
+        uid =getIntent().getStringExtra("uid");
 
         btnCourseTaken = (Button) findViewById(R.id.courseTaken);
         btnCourseTaken.setOnClickListener(this);
@@ -28,16 +30,21 @@ public class StudentPg extends AppCompatActivity implements View.OnClickListener
 
     @Override
     public void onClick(View view) {
+        Intent intent;
         switch (view.getId()) {
             case R.id.logout:
-                startActivity(new Intent(this, MainActivity.class));
+                startActivity(new Intent(StudentPg.this, MainActivity.class));
                 break;
             case R.id.courseTaken:
-                startActivity(new Intent(this, Coursestaken.class));
+                intent = new Intent(StudentPg.this, Coursestaken.class);
+                intent.putExtra("uid", uid);
+                startActivity(intent);
                 break;
             case R.id.generateTimeline:
-                //enter timeline page
-                //startActivity(new Intent(this, ...);
+                intent = new Intent(StudentPg.this, StudentTimeline.class);
+                intent.putExtra("uid", uid);
+                startActivity(intent);
+                break;
         }
     }
 }
