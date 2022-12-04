@@ -96,7 +96,7 @@ public class StudentLoginPg extends AppCompatActivity implements View.OnClickLis
     public void goToStudentPage(String uid){
         progressBar.setVisibility(View.GONE);
         Intent intent = new Intent(StudentLoginPg.this, StudentPg.class);
-        intent.putExtra("userID", uid);
+        intent.putExtra("uid", uid);
         startActivity(intent);
     }
 
