@@ -20,6 +20,13 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".AdminEditCourse"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".AdminCourseList"
             android:exported="false">
             <meta-data
