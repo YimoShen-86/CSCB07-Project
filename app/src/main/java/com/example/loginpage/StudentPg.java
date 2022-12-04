@@ -36,7 +36,7 @@ public class StudentPg extends AppCompatActivity implements View.OnClickListener
                 startActivity(new Intent(StudentPg.this, MainActivity.class));
                 break;
             case R.id.courseTaken:
-                intent = new Intent(StudentPg.this, Coursestaken.class);
+                intent = new Intent(StudentPg.this, coursesTaken.class);
                 intent.putExtra("uid", uid);
                 startActivity(intent);
                 break;

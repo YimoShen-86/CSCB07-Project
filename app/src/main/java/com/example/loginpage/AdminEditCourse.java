@@ -50,13 +50,12 @@ public class AdminEditCourse extends AppCompatActivity {
                 String sessions = textSession.getText().toString().trim().toUpperCase();
                 String pre = textPrerequisite.getText().toString().trim().toUpperCase();
 
-                Course newCourse = new Course(code, name, sessions, pre);
+                Course newCourse = new Course(code, name, pre, sessions);
 
                 // save this course object to firebase
                 model.saveCourse(newCourse, (Boolean succeed) -> {
                     if (succeed) {
-//                        System.out.println(code + " " + name + " " + sessions + " " + pre);
-                        Toast.makeText(AdminEditCourse.this, code + " " + name + " " + sessions + " " + pre,Toast.LENGTH_LONG).show();
+//                        Toast.makeText(AdminEditCourse.this, code + " " + name + " " + sessions + " " + pre,Toast.LENGTH_LONG).show();
                         Toast.makeText(AdminEditCourse.this, "updated", Toast.LENGTH_LONG).show();
                         // TODO: do something else ...
                         startActivity(new Intent(AdminEditCourse.this, AdminCourseList.class));

@@ -66,7 +66,7 @@ public class ForgotPassword extends AppCompatActivity implements View.OnClickLis
                     Toast.makeText(ForgotPassword.this, "Check your email to reset your password", Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.GONE);
                 } else {
-                    Toast.makeText(ForgotPassword.this, "Something wrong happned, please try again", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ForgotPassword.this, "Something wrong happened, please try again", Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.GONE);
                 }
             }
