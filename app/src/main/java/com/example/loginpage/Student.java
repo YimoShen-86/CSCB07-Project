@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Student {
     public String fullName, studentNumber, email;
-    public List<String> taken; // taken courses
+    public List<courseModel> taken; // taken courses
     public Student(){
         taken = new ArrayList<>();
     }
