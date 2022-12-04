@@ -8,4 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="red">#D01C1F</color>
+    <color name="viva_magenta">#B73C58</color>
+    <color name="very_peri">#6667AB</color>
 </resources>

@@ -20,7 +20,6 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class AdminLoginPg extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView forgotPassword;
     private EditText editTextEmail, editTextPassword;
     private Button logIn;
 
@@ -39,9 +38,6 @@ public class AdminLoginPg extends AppCompatActivity implements View.OnClickListe
 
         logIn = (Button) findViewById(R.id.loginbtn);
         logIn.setOnClickListener(this);
-
-        forgotPassword = (TextView) findViewById(R.id.forgotpassword);
-        forgotPassword.setOnClickListener(this);
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
     }

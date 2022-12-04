@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,6 +20,7 @@ public class AdminCourseList extends AppCompatActivity {
     FireBaseModel model;
     ListView courseListView;
     List<Course> courses;
+    private Button btnLogOut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,8 @@ public class AdminCourseList extends AppCompatActivity {
             }
         });
 
+        btnLogOut = (Button) findViewById(R.id.logOutFromCourseList);
+
         model = new FireBaseModel();
         model.getCourses((HashMap<String, Course> coursesMap) -> {
             List<String> courseCodes = new ArrayList<>();
@@ -46,5 +51,13 @@ public class AdminCourseList extends AppCompatActivity {
             ArrayAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, courseCodes);
             courseListView.setAdapter(adapter);
         });
+    }
+
+    public void LogOutFromCourseList(View view){
+        switch(view.getId()){
+            case R.id.logOutFromCourseList:
+                startActivity(new Intent(AdminCourseList.this, MainActivity.class));
+                break;
+        }
     }
 }

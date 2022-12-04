@@ -36,7 +36,7 @@ public class AdminAddCourse extends AppCompatActivity {
                 String sessions = textSession.getText().toString().trim().toUpperCase();
                 String pre = textPrerequisite.getText().toString().trim().toUpperCase();
 
-                Course newCourse = new Course(code, name, sessions, pre);
+                Course newCourse = new Course(code, name, pre, sessions);
 
                 model.saveCourse(newCourse, (Boolean succeed) -> {
                     if (succeed) {
