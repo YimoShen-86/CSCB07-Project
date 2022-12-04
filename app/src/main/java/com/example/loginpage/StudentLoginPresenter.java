@@ -20,3 +20,7 @@ public class StudentLoginPresenter {
         });
     }
 }
+
+interface Callback<T>{
+    public void accept(T t);
+}

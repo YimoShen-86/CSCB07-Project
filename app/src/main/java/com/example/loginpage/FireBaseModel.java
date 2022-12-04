@@ -13,7 +13,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
-import java.util.function.Consumer;
 
 public class FireBaseModel {
     private FirebaseAuth mAuth;
@@ -30,7 +29,7 @@ public class FireBaseModel {
         sessionRef = FirebaseDatabase.getInstance().getReference("Session");
     }
 
-    public void register(String email, String password, Consumer<String> callback){
+    public void register(String email, String password, Callback<String> callback){
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -44,7 +43,7 @@ public class FireBaseModel {
         });
     }
 
-    public void login(String email, String password, Consumer<String> callback) {
+    public void login(String email, String password, Callback<String> callback) {
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -58,7 +57,7 @@ public class FireBaseModel {
         });
     }
 
-    public void getCourses(Consumer<HashMap<String, Course>> callback){
+    public void getCourses(Callback<HashMap<String, Course>> callback){
         courseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -76,7 +75,7 @@ public class FireBaseModel {
         });
     }
 
-    public void saveCourse(Course course, Consumer<Boolean> callback){
+    public void saveCourse(Course course, Callback<Boolean> callback){
         courseRef.child(course.code).setValue(course).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
@@ -85,7 +84,7 @@ public class FireBaseModel {
         });
     }
 
-    public void removeCourse(String code, Consumer<Boolean> callback){
+    public void removeCourse(String code, Callback<Boolean> callback){
         courseRef.child(code).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
@@ -94,7 +93,7 @@ public class FireBaseModel {
         });
     }
 
-    public void getStudent(String uid, Consumer<Student> callback){
+    public void getStudent(String uid, Callback<Student> callback){
         studentRef.child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -107,7 +106,7 @@ public class FireBaseModel {
         });
     }
 
-    public void saveStudent(String uid, Student student, Consumer<Boolean> callback){
+    public void saveStudent(String uid, Student student, Callback<Boolean> callback){
         studentRef.child(uid).setValue(student).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
@@ -116,7 +115,7 @@ public class FireBaseModel {
         });
     }
 
-    public void getSession(Consumer<Session> callback){
+    public void getSession(Callback<Session> callback){
         sessionRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
