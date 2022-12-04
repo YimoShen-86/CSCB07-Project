@@ -32,8 +32,12 @@ public class Coursestaken extends AppCompatActivity {
         btnView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+<<<<<<< Updated upstream:app/src/main/java/com/example/loginpage/Coursestaken.java
                 startActivity(new Intent(Coursestaken.this , coursecart.class));
 
+=======
+                startActivity(new Intent(coursesTaken.this , courseCart.class));
+>>>>>>> Stashed changes:app/src/main/java/com/example/loginpage/coursesTaken.java
             }
         });
 

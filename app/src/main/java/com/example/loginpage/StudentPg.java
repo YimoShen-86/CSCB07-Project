@@ -33,7 +33,13 @@ public class StudentPg extends AppCompatActivity implements View.OnClickListener
                 startActivity(new Intent(this, MainActivity.class));
                 break;
             case R.id.courseTaken:
+<<<<<<< Updated upstream
                 startActivity(new Intent(this, Coursestaken.class));
+=======
+                intent = new Intent(StudentPg.this, coursesTaken.class);
+                intent.putExtra("uid", uid);
+                startActivity(intent);
+>>>>>>> Stashed changes
                 break;
             case R.id.generateTimeline:
                 //enter timeline page
