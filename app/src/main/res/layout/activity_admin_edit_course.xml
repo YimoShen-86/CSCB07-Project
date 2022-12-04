@@ -7,22 +7,35 @@
     tools:context=".AdminEditCourse">
 
     <Button
-        android:id="@+id/addCourse"
+        android:id="@+id/updateCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add"
+        android:text="Update"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.733"
+        app:layout_constraintHorizontal_bias="0.221"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.806" />
+        app:layout_constraintVertical_bias="0.811" />
 
-    <EditText
-        android:id="@+id/txtCourseCode_toAdd"
+    <Button
+        android:id="@+id/deleteCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
+        android:layout_marginStart="88dp"
+
+        android:backgroundTint="@color/red"
+        android:text="Delete"
+        app:layout_constraintBottom_toBottomOf="@+id/updateCourse"
+        app:layout_constraintStart_toEndOf="@+id/updateCourse"
+        app:layout_constraintTop_toTopOf="@+id/updateCourse"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/txtCourseCode_toEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="132dp"
         android:ems="10"
         android:hint="Course Code"
         android:inputType="textPersonName"
@@ -33,7 +46,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/txtCourseName_toAdd"
+        android:id="@+id/txtCourseName_toEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -41,13 +54,13 @@
         android:hint="Course Name"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/txtCourseCode_toAdd"
+        app:layout_constraintEnd_toEndOf="@+id/txtCourseCode_toEdit"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/txtCourseCode_toAdd"
-        app:layout_constraintTop_toBottomOf="@+id/txtCourseCode_toAdd" />
+        app:layout_constraintStart_toStartOf="@+id/txtCourseCode_toEdit"
+        app:layout_constraintTop_toBottomOf="@+id/txtCourseCode_toEdit" />
 
     <EditText
-        android:id="@+id/txtSession_toAdd"
+        android:id="@+id/txtSession_toEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -55,13 +68,13 @@
         android:hint="Offering Sessions"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/txtCourseCode_toAdd"
+        app:layout_constraintEnd_toEndOf="@+id/txtCourseCode_toEdit"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/txtCourseCode_toAdd"
-        app:layout_constraintTop_toBottomOf="@+id/txtCourseName_toAdd" />
+        app:layout_constraintStart_toStartOf="@+id/txtCourseCode_toEdit"
+        app:layout_constraintTop_toBottomOf="@+id/txtCourseName_toEdit" />
 
     <EditText
-        android:id="@+id/txtPrereq_toAdd"
+        android:id="@+id/txtPrereq_toEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -69,10 +82,10 @@
         android:hint="Prerequisite"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/txtSession_toAdd"
+        app:layout_constraintEnd_toEndOf="@+id/txtSession_toEdit"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/txtSession_toAdd"
-        app:layout_constraintTop_toBottomOf="@+id/txtSession_toAdd" />
+        app:layout_constraintStart_toStartOf="@+id/txtSession_toEdit"
+        app:layout_constraintTop_toBottomOf="@+id/txtSession_toEdit" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
