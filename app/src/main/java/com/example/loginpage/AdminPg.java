@@ -18,7 +18,7 @@ public class AdminPg extends AppCompatActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_pg);
 
-        btnAddCourse = (Button) findViewById(R.id.addCourse);
+        btnAddCourse = (Button) findViewById(R.id.goToAddCourse);
         btnAddCourse.setOnClickListener(this);
 
         btnViewCourseList = (Button) findViewById(R.id.viewCourseList);
@@ -34,7 +34,12 @@ public class AdminPg extends AppCompatActivity implements View.OnClickListener{
             case R.id.logOut:
                 startActivity(new Intent(this, MainActivity.class));
                 break;
-            case R.id.addCourse:
+            case R.id.goToAddCourse:
+                startActivity(new Intent(this, AdminAddCourse.class));
+                break;
+            case R.id.viewCourseList:
+                startActivity(new Intent(this, AdminCourseList.class));
+                break;
 
         }
     }
