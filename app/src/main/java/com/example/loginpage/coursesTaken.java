@@ -34,7 +34,7 @@ public class coursesTaken extends AppCompatActivity {
         btnView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(coursesTaken.this , courseCart.class));
+                startActivity(new Intent(coursesTaken.this , viewcoursecart.class));
 
             }
         });
