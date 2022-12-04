@@ -24,14 +24,13 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     private EditText editTextFullName, editTextStudentNumber, editTextEmail, editTextPassword;
     private ProgressBar progressBar;
 
-    private FirebaseAuth mAuth;
+    private FireBaseModel model;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_user);
-
-        mAuth = FirebaseAuth.getInstance();
+        model = new FireBaseModel();
 
         signUp = (TextView) findViewById(R.id.signUp);
         signUp.setOnClickListener(this);
@@ -104,32 +103,19 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         }
 
         progressBar.setVisibility(View.VISIBLE);
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()) {
-                    Student student = new Student(fullName, studentNumber, email);
 
-                    Task<Void> voidTask = FirebaseDatabase.getInstance().getReference("Students")
-                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                            .setValue(student).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()) {
-                                        Toast.makeText(RegisterUser.this, "Student has been registered successfully", Toast.LENGTH_LONG).show();
-                                        progressBar.setVisibility(View.GONE);
-                                    } else {
-                                        Toast.makeText(RegisterUser.this, "Registration failed! Try again", Toast.LENGTH_LONG).show();
-                                        progressBar.setVisibility(View.GONE);
-                                    }
-                                }
-                            });
-
-                }else {
-                    Toast.makeText(RegisterUser.this, "Registration failed! Try again!", Toast.LENGTH_LONG).show();
+        model.register(email, password, (String userID) -> {
+            if (userID != null) {
+                Student student = new Student(fullName, studentNumber, email);
+                model.saveStudent(userID, student, (Boolean succeed) -> {
+                    Toast.makeText(RegisterUser.this,
+                            succeed ? "Student has been registered successfully" : "Registration failed! Try again",
+                            Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.GONE);
-                }
+                });
+            } else {
+                Toast.makeText(RegisterUser.this, "Registration failed! Try again!", Toast.LENGTH_LONG).show();
+                progressBar.setVisibility(View.GONE);
             }
         });
     }
