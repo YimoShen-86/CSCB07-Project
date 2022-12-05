@@ -93,10 +93,10 @@ public class StudentLoginPg extends AppCompatActivity implements View.OnClickLis
         presenter.login(email, password);
     }
 
-    public void goToStudentPage(String uid){
+    public void goToStudentPage(String userID){
         progressBar.setVisibility(View.GONE);
         Intent intent = new Intent(StudentLoginPg.this, StudentPg.class);
-        intent.putExtra("uid", uid);
+        intent.putExtra("userID", userID);
         startActivity(intent);
     }
 

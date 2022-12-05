@@ -1,54 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Coursestaken"
-    android:layout_margin="10dp">
-
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:gravity="center_horizontal"
-        android:text="Enter Taken Course"
-        android:textColor="@color/black"
-        android:textSize="26dp" />
+    tools:context=".AdminPg">
 
     <Button
-        android:id="@+id/btnadd"
-        android:layout_width="match_parent"
+        android:id="@+id/stuAddCourse"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/coursename"
-        android:layout_marginTop="0dp"
-        android:text="Add to your course list" />
+        android:text="Add a course"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.456" />
 
-
-    <TextView
-        android:id="@+id/coursesTaken"
-        android:layout_width="340dp"
-        android:layout_height="278dp"
-        android:layout_below="@+id/btnadd"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="87dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="166dp"
-        android:hint="Here you will see all the courses you have taken." />
-
-    <EditText
-        android:id="@+id/coursename"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/stuViewCourse"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/text"
-        android:layout_marginTop="20dp"
-        android:hint="Enter the Course you have taken"
-        android:textSize="20dp" />
+        android:text="View Course List"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stuAddCourse"
+        app:layout_constraintVertical_bias="0.284" />
 
-
-</RelativeLayout>
+    <Button
+        android:id="@+id/stulogOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/viva_magenta"
+        android:text="Log Out"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.984"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+</androidx.constraintlayout.widget.ConstraintLayout>

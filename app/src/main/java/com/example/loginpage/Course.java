@@ -73,4 +73,5 @@ public class Course implements Serializable {
         }
         return path;
     }
+
 }

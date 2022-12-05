@@ -2,6 +2,7 @@ package com.example.loginpage;
 
 import androidx.annotation.NonNull;
 
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -94,8 +95,8 @@ public class FireBaseModel {
         });
     }
 
-    public void getStudent(String uid, Consumer<Student> callback){
-        studentRef.child(uid).addListenerForSingleValueEvent(new ValueEventListener() {
+    public void getStudent(String userID, Consumer<Student> callback){
+        studentRef.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Student student = snapshot.getValue(Student.class);
