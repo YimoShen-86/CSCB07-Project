@@ -243,6 +243,7 @@ public class StudentTimeline extends AppCompatActivity {
                 }
                 List<String> taken = new ArrayList<>();
                 taken.addAll(student.taken);
+
                 List<String> newTaken = new ArrayList<>();
                 List<Course> coursePath = Course.getCoursePath(courses, code);
                 List<Course> fallCourses = new ArrayList<Course>();
