@@ -22,21 +22,27 @@ public class StudentLoginPresenter {
         });
     }
 
-    public void checkEmail(){
+    public boolean checkEmail(){
         String email = view.getEmail();
         if(email.isEmpty()) {
             view.displayErrorOnEditTextEmail("Email is required");
+            return true;
         }else if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             view.displayErrorOnEditTextEmail("Please enter a valid email");
+            return true;
         }
+        return false;
     }
 
-    public void checkPassword(){
+    public boolean checkPassword(){
         String password = view.getPassword();
         if(password.isEmpty()) {
             view.displayErrorOnEditTextPassword("Password is required");
+            return true;
         }else if(password.length() < 8) {
             view.displayErrorOnEditTextPassword("The length of password should be at least 8 characters");
+            return true;
         }
+        return false;
     }
 }

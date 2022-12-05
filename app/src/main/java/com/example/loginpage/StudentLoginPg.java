@@ -58,8 +58,8 @@ public class StudentLoginPg extends AppCompatActivity implements View.OnClickLis
                 startActivity(new Intent(this, RegisterUser.class));
                 break;
             case R.id.loginbtn:
-                presenter.checkEmail();
-                presenter.checkPassword();
+                if(presenter.checkEmail()) return;
+                if(presenter.checkPassword()) return;
                 progressBar.setVisibility(View.VISIBLE);
                 presenter.login(this.getEmail(), this.getPassword());
                 break;

@@ -46,8 +46,8 @@ public class AdminLoginPg extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.loginbtn:
-                presenter.checkEmail();
-                presenter.checkPassword();
+                if(presenter.checkEmail()) return;
+                if(presenter.checkPassword()) return;
                 progressBar.setVisibility(View.VISIBLE);
                 presenter.login(this.getEmail(), this.getPassword());
                 break;
