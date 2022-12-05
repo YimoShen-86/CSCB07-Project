@@ -53,4 +53,12 @@ public class AdminAddCourse extends AppCompatActivity {
         });
 
     }
+
+    public void LogOutFromAdminAddCourse(View view){
+        switch(view.getId()){
+            case R.id.logOutFromAdminAddCourse:
+                startActivity(new Intent(AdminAddCourse.this, MainActivity.class));
+                break;
+        }
+    }
 }

@@ -8,25 +8,29 @@
 
     <ListView
         android:id="@+id/courseListView"
-        android:layout_width="408dp"
-        android:layout_height="671dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logOutFromCourseList" />
 
     <TextView
         android:id="@+id/textCourseList"
-        android:layout_width="180dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="411dp"
+        android:layout_height="56dp"
+        android:background="@color/white_sand"
+        android:gravity="center_vertical"
         android:text="Course List"
-        android:textSize="32sp"
+        android:textSize="48sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/courseListView"
+        app:layout_constraintBottom_toBottomOf="@+id/logOutFromCourseList"
         app:layout_constraintEnd_toEndOf="@+id/courseListView"
-        app:layout_constraintHorizontal_bias="0.425"
-        app:layout_constraintStart_toStartOf="@+id/courseListView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 

@@ -104,4 +104,12 @@ public class AdminEditCourse extends AppCompatActivity {
             }
         });
     }
+
+    public void LogOutFromAdminEditCourse(View view){
+        switch(view.getId()){
+            case R.id.logOutFromEditCoursePg:Course:
+                startActivity(new Intent(AdminEditCourse.this, MainActivity.class));
+                break;
+        }
+    }
 }

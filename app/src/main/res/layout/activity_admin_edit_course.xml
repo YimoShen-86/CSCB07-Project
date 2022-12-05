@@ -33,11 +33,11 @@
 
     <EditText
         android:id="@+id/txtCourseCode_toEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="288dp"
+        android:layout_height="48dp"
         android:layout_marginTop="132dp"
         android:ems="10"
-        android:hint="Course Code"
+        android:hint="CSCA48"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,11 +47,11 @@
 
     <EditText
         android:id="@+id/txtCourseName_toEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="290dp"
+        android:layout_height="48dp"
         android:layout_marginTop="50dp"
         android:ems="10"
-        android:hint="Course Name"
+        android:hint="Introduction to Calculus"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="@+id/txtCourseCode_toEdit"
@@ -61,11 +61,11 @@
 
     <EditText
         android:id="@+id/txtSession_toEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="289dp"
+        android:layout_height="49dp"
         android:layout_marginTop="50dp"
         android:ems="10"
-        android:hint="Offering Sessions"
+        android:hint="FALL,WINTER,SUMMER"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="@+id/txtCourseCode_toEdit"
@@ -75,17 +75,93 @@
 
     <EditText
         android:id="@+id/txtPrereq_toEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="292dp"
+        android:layout_height="48dp"
         android:layout_marginTop="50dp"
         android:ems="10"
-        android:hint="Prerequisite"
+        android:hint="CSCA08"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="@+id/txtSession_toEdit"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/txtSession_toEdit"
         app:layout_constraintTop_toBottomOf="@+id/txtSession_toEdit" />
+
+    <TextView
+        android:id="@+id/textViewEditCoursePg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white_sand"
+        android:text="Edit Course"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/logOutFromEditCoursePg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/logOutFromEditCoursePg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="@color/viva_magenta"
+        android:onClick="LogOutFromAdminEditCourse"
+        android:text="@string/log_out"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textCourseCode_eidtCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Course Code"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textCourseName_editCourse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEditCoursePg"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textCourseName_editCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="288dp"
+        android:layout_marginBottom="20dp"
+        android:text="Course Name"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtCourseName_toEdit"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textOfferingSession_editCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:text="Offering Session"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textCourseName_editCourse" />
+
+    <TextView
+        android:id="@+id/textViewPrerequisite_toEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:text="Prerequisite"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textOfferingSession_editCourse"
+        app:layout_constraintVertical_bias="0.006" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
