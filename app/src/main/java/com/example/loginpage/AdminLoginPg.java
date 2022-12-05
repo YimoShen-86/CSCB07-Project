@@ -46,7 +46,10 @@ public class AdminLoginPg extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.loginbtn:
-                adminLogin();
+                presenter.checkEmail();
+                presenter.checkPassword();
+                progressBar.setVisibility(View.VISIBLE);
+                presenter.login(this.getEmail(), this.getPassword());
                 break;
             case R.id.forgotpassword:
                 startActivity(new Intent(this, ForgotPassword.class));
@@ -54,6 +57,7 @@ public class AdminLoginPg extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+/** ORIGINAL CODE(THIS part not APPLYING MVP)
     private void adminLogin() {
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
@@ -79,6 +83,27 @@ public class AdminLoginPg extends AppCompatActivity implements View.OnClickListe
 
         progressBar.setVisibility(View.VISIBLE);
         presenter.login(email, password);
+    }
+ **/
+
+    public String getEmail(){
+        return editTextEmail.getText().toString().trim();
+    }
+
+    public String getPassword(){
+        return editTextPassword.getText().toString().trim();
+    }
+
+    public void displayErrorOnEditTextEmail(String s){
+        editTextEmail.setError(s);
+        editTextEmail.requestFocus();
+        return;
+    }
+
+    public void displayErrorOnEditTextPassword(String s){
+        editTextPassword.setError(s);
+        editTextPassword.requestFocus();
+        return;
     }
 
     public void goToAdminPage(String uid){

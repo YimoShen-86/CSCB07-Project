@@ -58,7 +58,10 @@ public class StudentLoginPg extends AppCompatActivity implements View.OnClickLis
                 startActivity(new Intent(this, RegisterUser.class));
                 break;
             case R.id.loginbtn:
-                studentLogin();
+                presenter.checkEmail();
+                presenter.checkPassword();
+                progressBar.setVisibility(View.VISIBLE);
+                presenter.login(this.getEmail(), this.getPassword());
                 break;
             case R.id.forgotpassword:
                 startActivity(new Intent(this, ForgotPassword.class));
@@ -66,6 +69,7 @@ public class StudentLoginPg extends AppCompatActivity implements View.OnClickLis
         }
     }
 
+    /** ORIGINAL CODE(THIS part not APPLYING MVP)
     private void studentLogin() {
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
@@ -92,7 +96,27 @@ public class StudentLoginPg extends AppCompatActivity implements View.OnClickLis
         progressBar.setVisibility(View.VISIBLE);
         presenter.login(email, password);
     }
+     **/
 
+    public String getEmail(){
+        return editTextEmail.getText().toString().trim();
+    }
+
+    public String getPassword(){
+        return editTextPassword.getText().toString().trim();
+    }
+
+    public void displayErrorOnEditTextEmail(String s){
+        editTextEmail.setError(s);
+        editTextEmail.requestFocus();
+        return;
+    }
+
+    public void displayErrorOnEditTextPassword(String s){
+        editTextPassword.setError(s);
+        editTextPassword.requestFocus();
+        return;
+    }
     public void goToStudentPage(String userID){
         progressBar.setVisibility(View.GONE);
         Intent intent = new Intent(StudentLoginPg.this, StudentPg.class);
