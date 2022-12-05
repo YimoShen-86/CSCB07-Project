@@ -41,7 +41,6 @@ public class AdminAddCourse extends AppCompatActivity {
                 model.saveCourse(newCourse, (Boolean succeed) -> {
                     if (succeed) {
                         Toast.makeText(AdminAddCourse.this, "added", Toast.LENGTH_LONG).show();
-                        // TODO: do something else ...
 
                     } else {
                         Toast.makeText(AdminAddCourse.this, "failed to add", Toast.LENGTH_LONG).show();

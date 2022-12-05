@@ -57,7 +57,7 @@ public class AdminEditCourse extends AppCompatActivity {
                     if (succeed) {
 //                        Toast.makeText(AdminEditCourse.this, code + " " + name + " " + sessions + " " + pre,Toast.LENGTH_LONG).show();
                         Toast.makeText(AdminEditCourse.this, "updated", Toast.LENGTH_LONG).show();
-                        // TODO: do something else ...
+
                         startActivity(new Intent(AdminEditCourse.this, AdminCourseList.class));
                     } else {
                         Toast.makeText(AdminEditCourse.this, "failed to update", Toast.LENGTH_LONG).show();
