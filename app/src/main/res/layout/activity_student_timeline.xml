@@ -10,8 +10,8 @@
         android:id="@+id/btnCreate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:text="Create"
+        android:layout_marginStart="12dp"
+        android:text="GENERATE"
         app:layout_constraintBottom_toBottomOf="@+id/txtWantToTake"
         app:layout_constraintStart_toEndOf="@+id/txtWantToTake"
         app:layout_constraintTop_toTopOf="@+id/txtWantToTake"
@@ -19,27 +19,26 @@
 
     <EditText
         android:id="@+id/txtWantToTake"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_width="255dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
+        android:hint="Please split courses with ,"
         android:inputType="textPersonName"
-        android:hint="Course Code"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.208"
+        app:layout_constraintHorizontal_bias="0.102"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/table2"
+        android:id="@+id/takentimetable"
         android:layout_width="345dp"
         android:layout_height="179dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="48dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.378"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtWantToTake">
-
-    </TextView>
+        app:layout_constraintTop_toBottomOf="@+id/txtWantToTake" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,12 +26,6 @@
         android:layout_marginTop="0dp"
         android:text="Add to your course list" />
 
-    <Button
-        android:id="@+id/btnedit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnadd"
-        android:text="Edit your course list" />
 
     <TextView
         android:id="@+id/coursesTaken"
