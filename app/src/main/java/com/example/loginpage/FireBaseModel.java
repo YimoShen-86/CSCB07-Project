@@ -13,6 +13,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.function.Consumer;
 
@@ -73,6 +74,25 @@ public class FireBaseModel {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+    }
+
+    public void getTakenCourses(String userID,Consumer<ArrayList<String>> callback){
+        studentRef.child(userID).child("taken").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                ArrayList<String> takenCourses = new ArrayList<String>();
+                for(DataSnapshot takenCourseSnapShot: snapshot.getChildren()){
+                    String takenCourse = takenCourseSnapShot.getValue(String.class);
+                    takenCourses.add(takenCourse);
+                }
+                callback.accept(takenCourses);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
     }
