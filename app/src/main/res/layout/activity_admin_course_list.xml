@@ -24,6 +24,7 @@
         android:layout_height="56dp"
         android:background="@color/white_sand"
         android:gravity="center_vertical"
+        android:paddingStart="15dp"
         android:text="Course List"
         android:textSize="48sp"
         android:textStyle="bold"

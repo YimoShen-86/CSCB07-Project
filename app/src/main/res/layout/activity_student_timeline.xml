@@ -15,7 +15,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/txtWantToTake"
         app:layout_constraintStart_toEndOf="@+id/txtWantToTake"
         app:layout_constraintTop_toTopOf="@+id/txtWantToTake"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        android:backgroundTint="#23B8AA"/>
 
     <EditText
         android:id="@+id/txtWantToTake"

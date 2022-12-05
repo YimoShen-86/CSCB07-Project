@@ -24,6 +24,7 @@
         android:layout_height="56dp"
         android:background="@color/white_sand"
         android:gravity="center_vertical"
+        android:paddingStart="15dp"
         android:text=" Taken Courses"
         android:textSize="36sp"
         android:textStyle="bold"
