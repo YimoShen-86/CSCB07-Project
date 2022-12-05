@@ -18,7 +18,7 @@ import java.util.List;
 
 public class StudentTimeline extends AppCompatActivity {
     FireBaseModel model;
-    String uid;
+    String userID;
 
     EditText txtWantToTake;
     TextView timetable;
@@ -33,7 +33,7 @@ public class StudentTimeline extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_timeline);
         model = new FireBaseModel();
-        uid = getIntent().getStringExtra("uid");
+        userID = getIntent().getStringExtra("userID");
 
         timetable = findViewById(R.id.takentimetable);
         txtWantToTake = findViewById(R.id.txtWantToTake);
@@ -49,7 +49,7 @@ public class StudentTimeline extends AppCompatActivity {
             this.session = session;
         });
 
-        model.getStudent(uid, (Student student) -> {
+        model.getStudent(userID, (Student student) -> {
             this.student = student;
         });
 
@@ -159,6 +159,10 @@ public class StudentTimeline extends AppCompatActivity {
     }
 }
 /*
+
+FAILED CODE
+
+
 package com.example.loginpage;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -179,7 +183,7 @@ import java.util.List;
 
 public class StudentTimeline extends AppCompatActivity {
     FireBaseModel model;
-    String uid;
+    String userID;
 
     EditText txtWantToTake;
     TextView timetable;
@@ -194,7 +198,7 @@ public class StudentTimeline extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_timeline);
         model = new FireBaseModel();
-        uid = getIntent().getStringExtra("uid");
+        userID = getIntent().getStringExtra("userID");
 
         timetable = findViewById(R.id.takentimetable);
         txtWantToTake = findViewById(R.id.txtWantToTake);
@@ -210,7 +214,7 @@ public class StudentTimeline extends AppCompatActivity {
             this.session = session;
         });
 
-        model.getStudent(uid, (Student student) -> {
+        model.getStudent(userID, (Student student) -> {
             this.student = student;
         });
 
@@ -312,6 +316,6 @@ public class StudentTimeline extends AppCompatActivity {
             }
         });
     }
-}*/
-
+}
+*/
 
