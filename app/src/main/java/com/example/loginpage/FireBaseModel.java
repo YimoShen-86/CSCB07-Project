@@ -78,6 +78,24 @@ public class FireBaseModel {
         });
     }
 
+    public void saveCourse(Course course, Consumer<Boolean> callback){
+        courseRef.child(course.code).setValue(course).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                callback.accept(task.isSuccessful());
+            }
+        });
+    }
+
+    public void removeCourse(String code, Consumer<Boolean> callback){
+        courseRef.child(code).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                callback.accept(task.isSuccessful());
+            }
+        });
+    }
+
     public void getTakenCourses(String userID,Consumer<ArrayList<String>> callback){
         studentRef.child(userID).child("taken").addValueEventListener(new ValueEventListener() {
             @Override
@@ -97,8 +115,8 @@ public class FireBaseModel {
         });
     }
 
-    public void saveCourse(Course course, Consumer<Boolean> callback){
-        courseRef.child(course.code).setValue(course).addOnCompleteListener(new OnCompleteListener<Void>() {
+    public void saveTakenCourse(String userID, String index, String courseCode, Consumer<Boolean> callback){
+        studentRef.child(userID).child("taken").child(index).setValue(courseCode).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 callback.accept(task.isSuccessful());
@@ -106,8 +124,8 @@ public class FireBaseModel {
         });
     }
 
-    public void removeCourse(String code, Consumer<Boolean> callback){
-        courseRef.child(code).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+    public void removeTakenCourse(String userID, String index,Consumer<Boolean> callback){
+        studentRef.child(userID).child("taken").child(index).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 callback.accept(task.isSuccessful());

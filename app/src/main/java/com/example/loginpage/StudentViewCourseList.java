@@ -39,6 +39,8 @@ public class StudentViewCourseList extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String courseCode = taken.get(i);
                 Intent intent = new Intent(StudentViewCourseList.this, CourseDetail.class);
+                intent.putExtra("userID", userID);
+                intent.putExtra("index",Integer.toString(i));
                 intent.putExtra("courseCode", courseCode);
                 startActivity(intent);
             }

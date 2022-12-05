@@ -4,6 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CourseDetail">
+    tools:context=".AdminEditCourse">
+
+    <Button
+        android:id="@+id/updateTakenCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.166"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.683" />
+
+    <Button
+        android:id="@+id/deleteTakenCourse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+
+        android:backgroundTint="@color/red"
+        android:text="Delete"
+        app:layout_constraintBottom_toBottomOf="@+id/updateTakenCourse"
+        app:layout_constraintStart_toEndOf="@+id/updateTakenCourse"
+        app:layout_constraintTop_toTopOf="@+id/updateTakenCourse"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/txtTakenCourse_toEdit"
+        android:layout_width="288dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="240dp"
+        android:ems="10"
+        android:hint="Course Code"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.365"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewEditTakenCoursePg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white_sand"
+        android:text="Edit Course"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/logOutFromEditTakenCoursePg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/logOutFromEditTakenCoursePg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="@color/viva_magenta"
+        android:onClick="LogOutFromStudentEditCourse"
+        android:text="@string/log_out"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
