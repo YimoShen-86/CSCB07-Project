@@ -58,7 +58,7 @@ public class StudentViewCourseList extends AppCompatActivity {
     public void BackToStudentPg(View view){
         switch(view.getId()){
             case R.id.backViewCourseList:
-                startActivity(new Intent(StudentViewCourseList.this, StudentPg.class));
+                finish();
                 break;
         }
     }

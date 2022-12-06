@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class AdminAddCourse extends AppCompatActivity {
 
-    Button btnAddCourse;
+    Button btnAddCourse, btnCancel;
     EditText textCode, textSession;
     EditText textName, textPrerequisite;
     FireBaseModel model;
@@ -26,6 +26,7 @@ public class AdminAddCourse extends AppCompatActivity {
         textName = findViewById(R.id.txtCourseName_toAdd);
         textSession = findViewById(R.id.txtSession_toAdd);
         textPrerequisite = findViewById(R.id.txtPrereq_toAdd);
+        btnCancel = findViewById(R.id.cancelAddCourse);
 
         btnAddCourse = (Button) findViewById(R.id.addCourse);
         btnAddCourse.setOnClickListener(new View.OnClickListener() {
@@ -48,6 +49,12 @@ public class AdminAddCourse extends AppCompatActivity {
                 });
 
                 startActivity(new Intent(AdminAddCourse.this, AdminPg.class));
+            }
+        });
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
 
