@@ -44,6 +44,7 @@
         android:backgroundTint="@color/viva_magenta"
         android:onClick="LogOutFromCourseList"
         android:text="Log Out"
+        app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,8 +10,9 @@
         android:id="@+id/updateCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Update"
         android:backgroundTint="#23B8AA"
+        android:text="Update"
+        app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.221"
@@ -27,6 +28,7 @@
 
         android:backgroundTint="@color/red"
         android:text="Delete"
+        app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/updateCourse"
         app:layout_constraintStart_toEndOf="@+id/updateCourse"
         app:layout_constraintTop_toTopOf="@+id/updateCourse"
@@ -42,7 +44,7 @@
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.298"
+        app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -111,6 +113,7 @@
         android:backgroundTint="@color/viva_magenta"
         android:onClick="LogOutFromAdminEditCourse"
         android:text="@string/log_out"
+        app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

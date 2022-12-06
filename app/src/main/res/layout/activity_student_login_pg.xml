@@ -45,14 +45,15 @@
             android:padding="8dp" />
 
         <Button
+            android:id="@+id/loginbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/loginbtn"
             android:layout_marginTop="16dp"
             android:padding="12dp"
             android:text="Log in"
             android:textAllCaps="false"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            app:cornerRadius="10dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -99,7 +100,8 @@
             android:backgroundTint="#34BF51"
             android:text="Create a new account"
             android:textAllCaps="false"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            app:cornerRadius="10dp" />
 
 
     </LinearLayout>
