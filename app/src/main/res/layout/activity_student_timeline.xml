@@ -11,12 +11,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
+        android:backgroundTint="#23B8AA"
         android:text="GENERATE"
+        app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/txtWantToTake"
         app:layout_constraintStart_toEndOf="@+id/txtWantToTake"
         app:layout_constraintTop_toTopOf="@+id/txtWantToTake"
-        app:layout_constraintVertical_bias="1.0"
-        android:backgroundTint="#23B8AA"/>
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/txtWantToTake"

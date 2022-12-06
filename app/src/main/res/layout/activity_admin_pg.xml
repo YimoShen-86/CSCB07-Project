@@ -13,9 +13,10 @@
         android:layout_marginTop="270dp"
         android:backgroundTint="#23B8AA"
         android:text="Add a course"
+        android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:textColor="@color/white"
+        app:cornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="@+id/viewCourseList"
         app:layout_constraintStart_toStartOf="@+id/viewCourseList"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,9 +28,10 @@
         android:layout_marginBottom="248dp"
         android:backgroundTint="#23B8AA"
         android:text="View Course List"
+        android:textColor="@color/white"
         android:textSize="27sp"
         android:textStyle="bold"
-        android:textColor="@color/white"
+        app:cornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -43,6 +45,7 @@
         android:layout_marginEnd="16dp"
         android:backgroundTint="@color/viva_magenta"
         android:text="Log Out"
+        app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
