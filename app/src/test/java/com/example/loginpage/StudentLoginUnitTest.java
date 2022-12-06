@@ -127,22 +127,4 @@ public class StudentLoginUnitTest {
 
         verify(view1, times(1)).displayError();
     }
-
-    /**
-     @Test
-     public void testStudentLoginPresenter2(){
-     when(stuLoginView.getEmail()).thenReturn("bob@mail.com");
-     when(stuLoginView.getPassword()).thenReturn("000000000");
-
-     StudentLoginPresenter presenter =
-     new StudentLoginPresenter(model, stuLoginView);
-
-     verify(model).login("bob@mail.com", "000000000",
-     captor.capture());
-
-     }**/
-    @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
-    }
 }
