@@ -14,7 +14,7 @@ public class AdminLoginPresenter {
     }
 
     public void login(String email, String password){
-        model.login(email, password, (String uid) -> {
+        model.adminLogin(email, password, (String uid) -> {
             if(uid != null)
                 view.goToAdminPage(uid);
             else

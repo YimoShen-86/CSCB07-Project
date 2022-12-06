@@ -47,10 +47,11 @@ public class FireBaseModel {
     }
 
     public void login(String email, String password, Consumer<String> callback) {
+
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
+                if(task.isSuccessful() && !mAuth.getUid().equals("VwrGm5pVYcWMPmvbb4RlPks7ajp1")){
                     callback.accept(mAuth.getUid());
                 }
                 else {
@@ -60,6 +61,20 @@ public class FireBaseModel {
         });
     }
 
+    public void adminLogin(String email, String password, Consumer<String> callback) {
+
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful() && mAuth.getUid().equals("VwrGm5pVYcWMPmvbb4RlPks7ajp1")){
+                    callback.accept(mAuth.getUid());
+                }
+                else {
+                    callback.accept(null);
+                }
+            }
+        });
+    }
     public void getCourses(Consumer<HashMap<String, Course>> callback){
         courseRef.addValueEventListener(new ValueEventListener() {
             @Override
