@@ -7,6 +7,9 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.Mock;
 
+import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.eq;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import org.mockito.runners.MockitoJUnitRunner;
@@ -28,6 +31,9 @@ public class AdminLoginUnitTest {
 
     @Mock
     FireBaseModel model;
+
+    @Captor
+    ArgumentCaptor<Consumer<String>> captor;
 
     @Test
     public void testAdminLoginPresenterCheckEmail1(){
@@ -93,4 +99,33 @@ public class AdminLoginUnitTest {
         Assert.assertEquals(presenter.checkPassword(), false);
     }
 
+    @Test
+    public void testStudentLoginSuccessful() {
+        String email = "admin@mail.com";
+        String password = "12345678";
+
+        AdminLoginPresenter presenter = new AdminLoginPresenter(model, view);
+        presenter.login(email, password);
+
+        verify(model).login(eq(email), eq(password), captor.capture());
+        Consumer<String> callback = captor.getValue();
+        callback.accept("VwrGm5pVYcWMPmvbb4RlPks7ajp1");
+
+        verify(view, times(1)).goToAdminPage(any());
+    }
+
+    @Test
+    public void testStudentLoginFailed() {
+        String email = "admin@mail.com";
+        String password = "12345678";
+
+        AdminLoginPresenter presenter = new AdminLoginPresenter(model, view);
+        presenter.login(email, password);
+
+        verify(model).login(eq(email), eq(password), captor.capture());
+        Consumer<String> callback = captor.getValue();
+        callback.accept(null);
+
+        verify(view, times(1)).displayError();
+    }
 }

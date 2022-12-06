@@ -8,9 +8,6 @@ public class AdminLoginPresenter {
     private FireBaseModel model;
     private AdminLoginPg view;
 
-    public AdminLoginPresenter() {
-    }
-
     public AdminLoginPresenter(FireBaseModel model, AdminLoginPg view){
         this.model =model;
         this.view = view;

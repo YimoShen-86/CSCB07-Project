@@ -6,8 +6,6 @@ public class StudentLoginPresenter {
     private FireBaseModel model;
     private StudentLoginPg view;
 
-    public StudentLoginPresenter(){}
-
     public StudentLoginPresenter(FireBaseModel model, StudentLoginPg view){
         this.model= model;
         this.view = view;
