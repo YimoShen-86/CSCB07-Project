@@ -100,14 +100,14 @@ public class AdminLoginUnitTest {
     }
 
     @Test
-    public void testStudentLoginSuccessful() {
+    public void testAdminLoginSuccessful() {
         String email = "admin@mail.com";
         String password = "12345678";
 
         AdminLoginPresenter presenter = new AdminLoginPresenter(model, view);
         presenter.login(email, password);
 
-        verify(model).login(eq(email), eq(password), captor.capture());
+        verify(model).adminLogin(eq(email), eq(password), captor.capture());
         Consumer<String> callback = captor.getValue();
         callback.accept("VwrGm5pVYcWMPmvbb4RlPks7ajp1");
 
@@ -115,14 +115,14 @@ public class AdminLoginUnitTest {
     }
 
     @Test
-    public void testStudentLoginFailed() {
+    public void testAdminLoginFailed() {
         String email = "admin@mail.com";
         String password = "12345678";
 
         AdminLoginPresenter presenter = new AdminLoginPresenter(model, view);
         presenter.login(email, password);
 
-        verify(model).login(eq(email), eq(password), captor.capture());
+        verify(model).adminLogin(eq(email), eq(password), captor.capture());
         Consumer<String> callback = captor.getValue();
         callback.accept(null);
 

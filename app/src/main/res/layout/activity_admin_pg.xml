@@ -4,17 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/rice_yellow"
     tools:context=".AdminPg">
 
     <Button
         android:id="@+id/goToAddCourse"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="270dp"
         android:backgroundTint="#23B8AA"
         android:text="Add a course"
         android:textColor="@color/white"
-        android:textSize="30sp"
+        android:textSize="27sp"
         android:textStyle="bold"
         app:cornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="@+id/viewCourseList"
@@ -25,7 +26,6 @@
         android:id="@+id/viewCourseList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="248dp"
         android:backgroundTint="#23B8AA"
         android:text="View Course List"
         android:textColor="@color/white"
@@ -34,8 +34,9 @@
         app:cornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goToAddCourse"
+        app:layout_constraintVertical_bias="0.100000024" />
 
     <Button
         android:id="@+id/logOut"
@@ -48,4 +49,16 @@
         app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Welcome"
+        android:textSize="33sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/goToAddCourse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logOut" />
 </androidx.constraintlayout.widget.ConstraintLayout>
