@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class coursesTaken extends AppCompatActivity implements View.OnClickListener{
-    Button addCourse, viewCourselist;
+    Button addCourse, viewCourselist, studentlogout;
     String userID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +20,8 @@ public class coursesTaken extends AppCompatActivity implements View.OnClickListe
         addCourse.setOnClickListener(this);
         viewCourselist = (Button)findViewById(R.id.stuViewCourse);
         viewCourselist.setOnClickListener(this);
+        studentlogout = (Button)findViewById(R.id.stulogOut);
+        studentlogout.setOnClickListener(this);
 
     }
     @Override

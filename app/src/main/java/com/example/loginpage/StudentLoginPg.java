@@ -69,35 +69,6 @@ public class StudentLoginPg extends AppCompatActivity implements View.OnClickLis
         }
     }
 
-    /** ORIGINAL CODE(THIS part not APPLYING MVP)
-    private void studentLogin() {
-        String email = editTextEmail.getText().toString().trim();
-        String password = editTextPassword.getText().toString().trim();
-
-        if(email.isEmpty()) {
-            editTextEmail.setError("Email is required");
-            editTextEmail.requestFocus();
-            return;
-        }else if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            editTextEmail.setError("Please enter a valid email");
-            return;
-        }
-
-        if(password.isEmpty()) {
-            editTextPassword.setError("Password is required");
-            editTextPassword.requestFocus();
-            return;
-        }else if(password.length() < 8) {
-            editTextPassword.setError("The length of password should be at least 8 characters");
-            editTextPassword.requestFocus();
-            return;
-        }
-
-        progressBar.setVisibility(View.VISIBLE);
-        presenter.login(email, password);
-    }
-     **/
-
     public String getEmail(){
         return editTextEmail.getText().toString().trim();
     }
